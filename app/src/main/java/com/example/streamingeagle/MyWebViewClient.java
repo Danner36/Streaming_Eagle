@@ -7,6 +7,7 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceError;
@@ -26,6 +27,7 @@ public class MyWebViewClient extends WebViewClient {
         return true;
     }
 
+
     @SuppressWarnings("deprecation")
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -37,6 +39,7 @@ public class MyWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
+        view.performClick();
         return handleUri(uri);
     }
 
@@ -51,6 +54,12 @@ public class MyWebViewClient extends WebViewClient {
             host.equals("lowend.xyz") ||
             host.equals("mygoodstream"))
         {
+            if(host.equals("lowend.xyz"))
+            {
+                // Continuous clicks until sportsbay loads?
+                Thread thread = new Thread(runnable);
+                thread.start();
+            }
             // Returning false means that you are going to load this url in the webView itself
             return false;
         } else {

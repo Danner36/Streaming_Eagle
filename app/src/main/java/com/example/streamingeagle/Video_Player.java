@@ -3,6 +3,7 @@ package com.example.streamingeagle;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
@@ -44,6 +45,8 @@ public class Video_Player extends AppCompatActivity {
         webSettings.setSupportZoom(true);
         // Needed for websites to load javascript enabled content (most videos/streams).
         webSettings.setJavaScriptEnabled(true);
+        // Starts webview stream on load.
+        webSettings.setMediaPlaybackRequiresUserGesture(false);
         // Attached webview to java class MyWebViewClient that vets the incoming urls before loading.
         // Blocks Ads / viruses / popups.
         // Also keeps url from launch in a browser.
@@ -56,5 +59,7 @@ public class Video_Player extends AppCompatActivity {
             webSettings.setUserAgentString("Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion");
         }
         web.loadUrl(video_url);
+
+
     }
 }
