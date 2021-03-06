@@ -1,57 +1,71 @@
 # CSV file containg most uptodate urls. App reads this file to populate itself. 
-A&E,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://bk7l2w4nlx53-hls-live.5centscdn.com/AETV/514c04b31b5f01cf00dd4965e197fdda.sdp/playlist.m3u8
-ABC,https://reddit-tv-streams.blogspot.com/p/26051.html
-ACCN,https://reddit-tv-streams.blogspot.com/p/20691.html
-AHC Go,http://mygoodstream.pw/channels/disco.php?c=55cb86eb6b66d1dd58373cf8&r=3de24badfcef6f3694c313a863cb4eac57e42c1f
-Animal Planet,http://mygoodstream.pw/channels/disco.php?c=55c51d806b66d1c57a5d08dc&r=ed3819f53633f2db8b996e655c750851157dfe3d
-Big 10 Network,https://sportsbay.org/embed/45629/1/btn-big-ten-network-live.html
-Bravo,https://mygoodstream.pw/channels/anv2.php?id=bravo
-CBS Sports Network,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://cbsshg09-cbsshg09-ms.global.ssl.fastly.net/cbss54g2/master/cbss54g2.m3u8
-CBS,https://reddit-tv-streams.blogspot.com/p/26052.html
-CNBC,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://1111296894.rsc.cdn77.org/LS-ATL-54548-14/index.m3u8
-CNN,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://1111296894.rsc.cdn77.org/ls-54548-1/index.m3u8
-Cooking Channel,http://mygoodstream.pw/channels/disco.php?c=5b8ed0256b66d17207730c80&r=b5fe330e11c7478947f78a5ba7fa69baeceefdb4
-Discovery Channel,https://tinyurl.com/5w8trffa
-Discovery ID,http://mygoodstream.pw/channels/disco.php?c=55c51d996b66d1dd7abfbc55&r=e7cfd5334b5bd4f406c210390787d86339110759
-Discovery Life,http://mygoodstream.pw/channels/disco.php?c=55c51dbd6b66d1e17abed970&r=25042da3a61e224fa996da5d39e8ea0ac0bfc671
-Discovery Science,http://mygoodstream.pw/channels/disco.php?c=55c51dad6b66d1e17abed96e&r=e79bbd0cf6485c9df76ed3dffd2b8d6201e3fc0a
-ESPN,https://lowend.xyz/stream/43572.html
-ESPN,https://sportsbay.org/embed/43572/1/espn-usa-live.html
-ESPN2,https://sportsbay.org/embed/45351/1/espn-2-live.html
-ESPNU,https://s1-tv.blogspot.com/p/stream.html?https://newdmn.icu/stream/45457.html
-FOX Sports 1,https://sportsbay.org/embed/45459/1/fox-sports-1-live.html
-FOX Sports 2,https://sportsbay.org/embed/45460/1/fox-sports-2-live.html
-FOX,https://s1-tv.blogspot.com/p/blog-page_10.html
+ABC News,https://sportsbay.org/watch/73155/1/abc-news-live.html
+ABC TV,https://sportsbay.org/watch/52715/1/abc-tv-live.html
+ACCN,https://sportsbay.org/watch/50008/1/accn-espn-live.html
+AHC,https://sportsbay.org/watch/70077/1/ahc-live.html
+AMC,https://sportsbay.org/watch/67190/1/amc-live.html
+Adult Swim,https://sportsbay.org/watch/69296/1/adult-swim-live.html
+Animal Planet,https://sportsbay.org/watch/69285/1/animal-planet-live.html
+BBC News,https://sportsbay.org/watch/69289/1/bbc-america-live.html
+Big Ten Network,https://sportsbay.org/watch/45629/1/btn-big-ten-network-live.html
+Bloomberg USA,https://sportsbay.org/watch/67733/1/bloomberg-usa-live.html
+Bravo,https://sportsbay.org/watch/67737/1/bravo-live.html
+C-SPAN History,https://sportsbay.org/watch/67734/1/c-span3-american-history-tv--live.html
+C-SPAN,https://sportsbay.org/watch/67741/1/c-span-live.html
+CBS News,https://sportsbay.org/watch/69308/1/cbsn-live.html
+CBS Sports HQ,https://sportsbay.org/watch/53069/1/cbs-sports-hq-live.html
+CBS Sports Network,https://sportsbay.org/watch/87217/1/cbs-sports-network-live.html
+CBS TV,https://sportsbay.org/watch/50366/1/cbs-tv-live.html
+CNBC,https://sportsbay.org/watch/50363/1/cnbc-live.html
+CNN,https://sportsbay.org/watch/67193/1/cnn-live.html
+Comedy Central,https://sportsbay.org/watch/68072/1/comedy-central-live.html
+Country Music Television,https://sportsbay.org/watch/68074/1/country-music-television-live.html
+Discovery Channel,https://sportsbay.org/watch/67196/1/discovery-channel-live.html
+ESPN 2,https://sportsbay.org/watch/45351/1/espn-2-live.html
+ESPN News,https://sportsbay.org/watch/45458/1/espn-news-live.html
+ESPN U,https://sportsbay.org/watch/45457/1/espn-u-live.html
+ESPN,https://sportsbay.org/watch/43572/1/espn-usa-live.html
+FOX Soccer, https://sportsbay.org/watch/56872/1/fox-soccer-plus-live.html
+FOX,https://sportsbay.org/watch/53939/1/fox-wnyw--live.html
 Fox News,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://1111296894.rsc.cdn77.org/ls-54548-2/index.m3u8
-HBO HD,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://edge.roku-live.top.comcast.net/out/u/hbo-east.m3u8
-HGTV,http://mygoodstream.pw/channels/disco.php?c=5b0457b76b66d153ea57c417&r=7330919d22729075eede263611111c543bf0434c
-MLB Network,https://sportsbay.org/embed/38247/1/mlb-network-live.html
-MSNBC,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://1111296894.rsc.cdn77.org/LS-ATL-54548-15/index.m3u8
-NBA TV,https://sportsbay.org/embed/38725/1/nba-tv-live.html
-NBC,https://s1-tv.blogspot.com/p/stream.html?https://daddylive.club/stream2watch/stream-53.php
-NFL Network,https://mygoodstream.pw/a15fe8cf-0539-4686-8df4-4bacc686cfe6
-NFL Network,https://sportsbay.org/embed/37625/1/nfl-network-live.html
-NFL Redzone,https://sportsbay.org/embed/37624/1/nfl-red-zone-live.html
-NHL Network,https://sportsbay.org/embed/38727/1/nhl-network-live.html
-Oxygen,https://mygoodstream.pw/channels/anv2.php?id=oxygen
-SEC Network,https://sportsbay.org/embed/46070/1/sec-network-live.html
-SYFY,http://mygoodstream.pw/channels/anv2.php?id=syfy
-Showtime,https://s1-tv.blogspot.com/p/webplayer2.html?s=https://edge.roku-live.top.comcast.net/out/u/showtime-east.m3u8
-USA,http://mygoodstream.pw/channels/anv2.php?id=usa
-WWE Network,https://sportsbay.org/embed/67132/1/wwe-network-live.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Fox SPorts 2,https://sportsbay.org/watch/45460/1/fox-sports-2-live.html
+Fox Sports 1,https://sportsbay.org/watch/45459/1/fox-sports-1-live.html
+Free Speech TV,https://sportsbay.org/watch/67736/1/free-speech-tv-live.html
+Freeform,https://sportsbay.org/watch/69284/1/freeform-live.html
+Golf Channel,https://sportsbay.org/watch/67691/1/golf-channel-live.html
+HBO HD,http://s1-tv.blogspot.com/p/webplayer2.html?s=https://tinyurl.com/jba6zzwr
+Hallmark,http://s1-tv.blogspot.com/p/webplayer2.html?s=https://tinyurl.com/3j4pj6xv
+History Channel,https://sportsbay.org/watch/67192/1/history-channel-live.html
+Law & Crime Network,https://sportsbay.org/watch/70089/1/law-crime-network-live.html
+MLB Network,https://sportsbay.org/watch/38247/1/mlb-network-live.html
+MSNBC,https://sportsbay.org/watch/92896/1/msnbc-live.html
+NASA TV,https://sportsbay.org/watch/69286/1/nasa-live.html
+NBA TV,https://sportsbay.org/watch/38725/1/nba-tv-live.html
+NBC Sports Network,https://sportsbay.org/watch/69183/1/nbc-sports-network-live.html
+NBC,https://sportsbay.org/watch/97566/1/nbc-live.html
+NESN Plus,https://sportsbay.org/watch/85354/1/nesn-plus-live.html
+NESN,https://sportsbay.org/watch/85355/1/nesn-live.html
+NFL Redzone,https://sportsbay.org/watch/37624/1/nfl-red-zone-live.html
+NHL Network,https://sportsbay.org/watch/38727/1/nhl-network-live.html
+National Geographic,https://sportsbay.org/watch/69287/1/national-geographic-live.html
+Paramount Network,https://sportsbay.org/watch/68077/1/paramount-network-live.html
+SEC Network,https://sportsbay.org/watch/46070/1/sec-network-live.html
+Showtime,https://sportsbay.org/watch/77870/1/showtime-live.html
+Syfy,https://sportsbay.org/watch/69290/1/syfy-live.html
+TBS,https://sportsbay.org/watch/69563/1/tbs-live.html
+TLC,https://sportsbay.org/watch/66973/1/tlc-live.html
+TNT,https://sportsbay.org/watch/50368/1/tnt-live.html
+TSN 1,https://sportsbay.org/watch/96800/1/tsn-1-live.html
+TSN 2,https://sportsbay.org/watch/96801/1/tsn-2-live.html
+TSN 3,https://sportsbay.org/watch/96802/1/tsn-3-live.html
+TSN 4,https://sportsbay.org/watch/96803/1/tsn-4-live.html
+TSN 5,https://sportsbay.org/watch/96804/1/tsn-5-live.html
+TV Land,https://sportsbay.org/watch/68073/1/tv-land-live.html
+Tennis Channel,https://sportsbay.org/watch/45711/1/the-tennis-channel-live.html
+The CW,https://sportsbay.org/watch/67198/1/the-cw-live.html
+The Shopping Channel,https://sportsbay.org/watch/69305/1/the-shopping-channel-live.html
+The Weather Channel,https://sportsbay.org/watch/67732/1/the-weather-channel-live.html
+USA Network,https://sportsbay.org/watch/67745/1/usa-network-live.html
+UTC Network,https://sportsbay.org/watch/67133/1/ufc-network-live.html
+VH1,https://sportsbay.org/watch/68075/1/vh1-live.html,
+WWE Network,https://sportsbay.org/watch/67132/1/wwe-network-live.html
