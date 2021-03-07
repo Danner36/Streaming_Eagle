@@ -3,11 +3,16 @@ package com.example.streamingeagle;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.CookieManager;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -15,12 +20,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import static android.webkit.WebSettings.PluginState.ON;
+import static java.net.Proxy.Type.HTTP;
 
 
 public class Video_Player extends AppCompatActivity {
 
+    public static boolean click_now = false;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -60,6 +68,6 @@ public class Video_Player extends AppCompatActivity {
         }
         web.loadUrl(video_url);
 
-
     }
 }
+

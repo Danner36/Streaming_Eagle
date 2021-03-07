@@ -3,21 +3,12 @@ package com.example.streamingeagle;
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.net.http.SslError;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.View;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
-
-import androidx.annotation.RequiresApi;
 
 import static android.content.ContentValues.TAG;
 
@@ -27,23 +18,26 @@ public class MyWebViewClient extends WebViewClient {
         return true;
     }
 
+    @Override
+    public void onPageFinished(WebView view, String url) {
+        super.onPageFinished(view, url);
+    }
 
     @SuppressWarnings("deprecation")
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         final Uri uri = Uri.parse(url);
-        return handleUri(uri);
+        return handleUri(uri, view);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
-        view.performClick();
-        return handleUri(uri);
+        return handleUri(uri, view);
     }
 
-    private boolean handleUri(final Uri uri) {
+    private boolean handleUri(final Uri uri, WebView view) {
         Log.i(TAG, "Uri =" + uri);
         final String host = uri.getHost();
         final String scheme = uri.getScheme();
@@ -54,12 +48,6 @@ public class MyWebViewClient extends WebViewClient {
             host.equals("lowend.xyz") ||
             host.equals("mygoodstream"))
         {
-            if(host.equals("lowend.xyz"))
-            {
-                // Continuous clicks until sportsbay loads?
-                Thread thread = new Thread(runnable);
-                thread.start();
-            }
             // Returning false means that you are going to load this url in the webView itself
             return false;
         } else {
