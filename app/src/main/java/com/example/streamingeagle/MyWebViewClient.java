@@ -1,7 +1,6 @@
 package com.example.streamingeagle;
 
 import android.annotation.TargetApi;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
@@ -18,10 +17,6 @@ public class MyWebViewClient extends WebViewClient {
         return true;
     }
 
-    @Override
-    public void onPageFinished(WebView view, String url) {
-        super.onPageFinished(view, url);
-    }
 
     @SuppressWarnings("deprecation")
     @Override

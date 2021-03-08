@@ -11,7 +11,9 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import org.jsoup.Jsoup;
@@ -55,19 +57,40 @@ public class Video_Player extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         // Starts webview stream on load.
         webSettings.setMediaPlaybackRequiresUserGesture(false);
+        webSettings.setAllowFileAccess(true);
+        webSettings.setLoadsImagesAutomatically(true);
+        //webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         // Attached webview to java class MyWebViewClient that vets the incoming urls before loading.
         // Blocks Ads / viruses / popups.
         // Also keeps url from launch in a browser.
-        web.setWebViewClient(new MyWebViewClient());
+        web.setWebViewClient(new MyWebViewClient()
+        {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(web, url);
+                TextView myAwesomeTextView = (TextView)findViewById(R.id.textView);
+                myAwesomeTextView.setText(view.getUrl());
+
+            }
+        });
+        web.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+
+                Toast.makeText(getApplicationContext(),String.valueOf(newProgress),Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         // Checks if channel is sourced from sportsbay.org.
         if(video_url.contains("sportsbay.org"))
         {
             // Changes the browser user agent since chrome user agent returns 403 Forbidden message.
+            //Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion
             webSettings.setUserAgentString("Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion");
         }
         web.loadUrl(video_url);
-
     }
 }
 
