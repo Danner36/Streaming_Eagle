@@ -11,8 +11,6 @@ import android.widget.RelativeLayout;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.Scanner;
 
 
 public class TV_Layout extends AppCompatActivity {

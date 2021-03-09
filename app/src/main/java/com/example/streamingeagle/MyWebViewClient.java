@@ -3,13 +3,13 @@ package com.example.streamingeagle;
 import android.annotation.TargetApi;
 import android.net.Uri;
 import android.os.Build;
-import android.util.Log;
+import android.os.SystemClock;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import static android.content.ContentValues.TAG;
 
 public class MyWebViewClient extends WebViewClient {
     public boolean shouldOverrideKeyEvent (WebView view, KeyEvent event) {
@@ -17,6 +17,10 @@ public class MyWebViewClient extends WebViewClient {
         return true;
     }
 
+    @Override
+    public void onPageFinished(WebView view, String url) {
+        Video_Player.handler.removeCallbacks(Video_Player.my_runnable);
+    }
 
     @SuppressWarnings("deprecation")
     @Override
@@ -33,16 +37,26 @@ public class MyWebViewClient extends WebViewClient {
     }
 
     private boolean handleUri(final Uri uri, WebView view) {
-        Log.i(TAG, "Uri =" + uri);
         final String host = uri.getHost();
-        final String scheme = uri.getScheme();
         // Check requested URL to known good
-        if (host.equals("s1-tv.blogspot.com") ||
-            host.equals("reddit-tv-streams.blogspot.com") ||
-            host.equals("newdmn.icu") ||
-            host.equals("lowend.xyz") ||
-            host.equals("mygoodstream"))
+        if (host.contains("s1-tv.blogspot.com") ||
+            host.contains("reddit-tv-streams.blogspot.com") ||
+            host.contains("newdmn.icu") ||
+            host.contains("lowend.xyz") ||
+            host.contains("mygoodstream") ||
+            host.contains("tinyurl"))
         {
+            if(host.contains("lowend.xyz"))
+            {
+                Video_Player.my_runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 1,MotionEvent.ACTION_DOWN,300,300,0));
+                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 1,MotionEvent.ACTION_UP,300,300,0));
+                    }
+                };
+                Video_Player.handler.postDelayed(Video_Player.my_runnable, 50);
+            }
             // Returning false means that you are going to load this url in the webView itself
             return false;
         } else {
