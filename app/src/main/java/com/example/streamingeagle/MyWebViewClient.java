@@ -9,34 +9,39 @@ import android.view.MotionEvent;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+
+import static android.os.SystemClock.sleep;
 
 
-public class MyWebViewClient extends WebViewClient {
-    public boolean shouldOverrideKeyEvent (WebView view, KeyEvent event) {
-
-        return true;
-    }
+public class MyWebViewClient extends WebViewClient
+{
 
     @Override
-    public void onPageFinished(WebView view, String url) {
+    public void onPageFinished(WebView view, String url)
+    {
         Video_Player.handler.removeCallbacks(Video_Player.my_runnable);
+        Video_Player.desired_url = false;
     }
 
     @SuppressWarnings("deprecation")
     @Override
-    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+    public boolean shouldOverrideUrlLoading(WebView view, String url)
+    {
         final Uri uri = Uri.parse(url);
         return handleUri(uri, view);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     @Override
-    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request)
+    {
         final Uri uri = request.getUrl();
         return handleUri(uri, view);
     }
 
-    private boolean handleUri(final Uri uri, WebView view) {
+    private boolean handleUri(final Uri uri, WebView view)
+    {
         final String host = uri.getHost();
         // Check requested URL to known good
         if (host.contains("s1-tv.blogspot.com") ||
@@ -48,14 +53,21 @@ public class MyWebViewClient extends WebViewClient {
         {
             if(host.contains("lowend.xyz"))
             {
-                Video_Player.my_runnable = new Runnable() {
+                Video_Player.my_runnable = new Runnable()
+                {
                     @Override
-                    public void run() {
-                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 1,MotionEvent.ACTION_DOWN,300,300,0));
-                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 1,MotionEvent.ACTION_UP,300,300,0));
+                    public void run()
+                    {
+                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 50,MotionEvent.ACTION_DOWN,300,300,0));
+                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 50,MotionEvent.ACTION_UP,300,300,0));
+                        Video_Player.handler.postDelayed(this, 1000);
                     }
                 };
-                Video_Player.handler.postDelayed(Video_Player.my_runnable, 50);
+                if(Video_Player.desired_url == false)
+                {
+                    Video_Player.desired_url = true;
+                    Video_Player.handler.postDelayed(Video_Player.my_runnable, 10);
+                }
             }
             // Returning false means that you are going to load this url in the webView itself
             return false;

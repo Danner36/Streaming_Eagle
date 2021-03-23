@@ -13,7 +13,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 
-public class TV_Layout extends AppCompatActivity {
+public class TV_Layout extends AppCompatActivity
+{
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -38,9 +39,11 @@ public class TV_Layout extends AppCompatActivity {
             String csv_line = "";
 
             // Cycle until csv file has no more data to read.
-            while ((csv_line = input.readLine()) != null) {
+            while ((csv_line = input.readLine()) != null)
+            {
                 // Skips comment lines in the file.
-                if(!csv_line.contains("//")){
+                if(!csv_line.contains("//"))
+                {
                     continue;
                 }
                 // Splits csv into two parts. The channel name (index 0) and url (index 1).

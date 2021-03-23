@@ -1,21 +1,31 @@
 package com.example.streamingeagle;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
 
 
 public class Video_Player extends AppCompatActivity {
 
     public static Handler handler = new Handler(Looper.getMainLooper());
     public static Runnable my_runnable;
+    public static boolean desired_url = false;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -55,7 +65,6 @@ public class Video_Player extends AppCompatActivity {
                 super.onPageFinished(web, url);
                 TextView myAwesomeTextView = (TextView)findViewById(R.id.textView);
                 myAwesomeTextView.setText(view.getUrl());
-
             }
         });
 
@@ -64,8 +73,9 @@ public class Video_Player extends AppCompatActivity {
         {
             // Changes the browser user agent since chrome user agent returns 403 Forbidden message.
             //Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion
-            webSettings.setUserAgentString("Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion");
+            webSettings.setUserAgentString("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36");
         }
+
         web.loadUrl(video_url);
     }
 }
