@@ -1,9 +1,14 @@
 package com.example.streamingeagle;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.MediaStore;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.webkit.WebResourceRequest;
@@ -20,7 +25,6 @@ public class MyWebViewClient extends WebViewClient
     @Override
     public void onPageFinished(WebView view, String url)
     {
-        Video_Player.handler.removeCallbacks(Video_Player.my_runnable);
         Video_Player.desired_url = false;
     }
 
@@ -51,29 +55,30 @@ public class MyWebViewClient extends WebViewClient
             host.contains("mygoodstream") ||
             host.contains("tinyurl"))
         {
-            if(host.contains("lowend.xyz"))
+            if(host.contains("lowend.xyz") && Video_Player.desired_url == false)
             {
-                Video_Player.my_runnable = new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 50,MotionEvent.ACTION_DOWN,300,300,0));
-                        view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 50,MotionEvent.ACTION_UP,300,300,0));
-                        Video_Player.handler.postDelayed(this, 1000);
-                    }
-                };
-                if(Video_Player.desired_url == false)
-                {
-                    Video_Player.desired_url = true;
-                    Video_Player.handler.postDelayed(Video_Player.my_runnable, 10);
-                }
+                Video_Player.desired_url = true;
+                new WebViewLoad().execute("worthless parameter");
             }
             // Returning false means that you are going to load this url in the webView itself
             return false;
         } else {
             // Do not load the requested URL
             return true;
+        }
+    }
+
+    private class WebViewLoad extends AsyncTask<String, Integer, String>
+    {
+        // This is run in a background thread
+        @Override
+        protected String doInBackground(String... params)
+        {
+            while(Video_Player.desired_url = true)
+            {
+                Video_Player.web.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis() + 100, MotionEvent.ACTION_DOWN,500,1100,0));
+            }
+            return null;
         }
     }
 }

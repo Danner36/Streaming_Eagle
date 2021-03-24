@@ -26,10 +26,10 @@ public class Video_Player extends AppCompatActivity {
     public static Handler handler = new Handler(Looper.getMainLooper());
     public static Runnable my_runnable;
     public static boolean desired_url = false;
+    public static WebView web = null;
 
     public void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         // Bring Linear layout into view.
         setContentView(R.layout.webview);
@@ -39,7 +39,7 @@ public class Video_Player extends AppCompatActivity {
         // Removes app name banner at top. Allows for orientation changes without reload.
         getSupportActionBar().hide();
         // Creates webview object.
-        WebView web = findViewById(R.id.webView);
+        web = findViewById(R.id.webView);
         // Configure settings for webview.
         WebSettings webSettings = web.getSettings();
         // Allows use of the phones file storage.
